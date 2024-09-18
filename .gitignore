@@ -4,6 +4,8 @@ node_modules
 /zzz
 *.7z
 *.zip
+/docs/.vuepress/.cache
+/docs/.vuepress/.temp
 
 # local env files
 .env.local
