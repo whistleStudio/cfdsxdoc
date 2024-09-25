@@ -9,6 +9,7 @@ docs/.vuepress/.temp/
 docs/.vuepress/dist/
 *.assets/
 *.pdf
+*.sb3
 
 # local env files
 .env.local
