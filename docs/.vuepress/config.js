@@ -1,9 +1,15 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
-import { searchPlugin } from '@vuepress/plugin-search'
+// import { searchPlugin } from '@vuepress/plugin-search'
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
+import { searchProPlugin } from "vuepress-plugin-search-pro"
 
+/* 
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+*/
 export default defineUserConfig({
   bundler: viteBundler(),
   title: "小学信息科技学科教学仪器-智能套件 教程",
@@ -106,7 +112,11 @@ export default defineUserConfig({
   }),
   base: "/tutorial/cfdsx/",
   plugins: [
-    searchPlugin({}),
+    // searchPlugin({}),
+    searchProPlugin({
+      indexContent: true,
+     hotReload: true,
+    }),
     backToTopPlugin()
   ],
 })
