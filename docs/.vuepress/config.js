@@ -13,6 +13,11 @@ import { searchProPlugin } from "vuepress-plugin-search-pro"
 export default defineUserConfig({
   bundler: viteBundler(),
   title: "小学信息科技学科教学仪器-智能套件 教程",
+  head: [
+    ["meta", {"http-equiv": "Pragma", content: "no-cache"}],
+    ["meta", {"http-equiv": "Cache-Control", content: "no-cache"}],
+    ["meta", {"http-equiv": "Expires", content: "0"}]
+  ],
   theme: defaultTheme({
     home: "/getting-started/概要.md",
     logo: "/images/cfdsxdoc-icon.png",
