@@ -102,7 +102,7 @@ export default defineUserConfig({
         ]
       },
       {
-        text: "追光太阳能采集系统",
+        text: "随光转动的太阳能采集系统",
         link: "/_07_solar/项目简介.md",
         collapsible: true,
         children: [
