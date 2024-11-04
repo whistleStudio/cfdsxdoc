@@ -33,6 +33,7 @@ export default defineUserConfig({
           {text: "开源大师兄编程板", link: "/getting-started/开源大师兄编程板.md"},
           {text: "编程星空软件", link: "/getting-started/编程星空软件.md"},
           {text: "注意事项", link: "/getting-started/注意事项.md"},
+          {text: "服务支持", link: "/getting-started/服务支持.md"}
         ]
       },
       {
