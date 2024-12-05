@@ -1,141 +1,31 @@
-<script>//node v20.17.0</script>
+---
+next:
+  text: 材料清单
+  link: /getting-started/材料清单.md
+---
+
 [[toc]]
+<br>
 
-# 开源大师兄编程板
+***<span style="font-size: 20px">文档网址 : &nbsp;&nbsp; https://dict.cfunworld.com/tutorial/cfdsx</span>***
 
-> 开源大师兄是一款基于开源鸿蒙、采用华为海思Hi3861 V100芯片的国产原创、“自主可控”微型计算机，内置OLED屏幕、A/B按钮、蜂鸣器、蓝色LED灯，集成WiFi 通信芯片，丰富的引脚，可外接多种传感器，支持python、C及图形化编程，同时致力于与更多的合作伙伴一起并以国产自主图形化编程环境OHCode为核心构建一个开源大师兄开放生态，共同推进“自主可控”行业发展，可广泛应用于物联网、声光互动、机器人控制、科学实验、可穿戴设备开发等丰富场景。
->
-> 以下简称“大师兄”。
+<br>
 
-<img src="/开源大师兄编程板.assets/image-20240923143451719.png" alt="image-20240923143451719" style="zoom: 80%;" />
+# 【快捷索引】
 
-##  1 硬件参数
+<br>
+<a href="https://www.bilibili.com/video/BV1rpziY3E2J/?spm_id_from=333.999.0.0&vd_source=d34a80bae9d64a0c5a0716bd47877802" style="font-size: 22px;text-decoration: none" target="_blank">🔎&nbsp; 快速入门（点亮一盏灯）</a>
 
-工作电压：5V
+<a href="https://cfunworld.com/#/product?id=0" style="font-size: 22px;text-decoration: none" target="_blank">🔎&nbsp; 编程星空软件</a>
 
-尺寸：4.5 x 5.16cm
+<a href="https://dict.cfunworld.com/download/driver/%E5%BC%80%E6%BA%90%E5%A4%A7%E5%B8%88%E5%85%84%E9%A9%B1%E5%8A%A8.html" style="font-size: 22px;text-decoration: none" target="_blank">🔎&nbsp;  硬件驱动</a>
 
-厚度：1.6cm
+<a href="https://dict.cfunworld.com/download/firmware/%E5%BC%80%E6%BA%90%E5%A4%A7%E5%B8%88%E5%85%84%E5%9B%BA%E4%BB%B6.html" style="font-size: 22px;text-decoration: none" target="_blank">🔎&nbsp;  固件更新</a>
 
-下载接口：Type-C
+<a href="https://cfunworld.com" style="font-size: 22px;text-decoration: none" target="_blank">🔎&nbsp;  创趣天地官网</a>
 
-串口芯片：CH340C
+<a href="https://drive.weixin.qq.com/s?k=ANgAgQejAFQlkndvPr" style="font-size: 22px;text-decoration: none" target="_blank">📦️&nbsp;  课件资料合集</a>
 
-FLASH大小 ：2MB
-
-串口速率：115200BPS
-
-WIFI协议:  802.11B/G/N
-
-天线形式:  板载PCB天线
-
-支持接口:  UART、SPI、I2C、DAC
-
-
-
-## 2 功能介绍
-### 引脚
-
-引脚是用来与外界相连的元器件进行物理连接的桥梁，可以结合相应的扩展板或者鳄鱼夹线来扩展大师兄开发板更多的可用性。下面为具体的引脚图：
-
-![image-20240923151618189](/开源大师兄编程板.assets/image-20240923151618189.png)
-
-开源大师兄可以使用的引脚包括：P1/P2/P5/P8/P11/P12/P13/P14/P15/P19/P20。具体说明如下：
-
-- P5被A按钮占用，P11被B按钮占用，一般情况下，不建议使用P5/P11引脚
-- P15被屏幕下方蓝色LED灯占用，V2.2版本中P12被占用
-- 模拟读取：P1/P2/P13/P14
-- 串口，P13为RX，P14为TX
-- I2C，P19为SCL，P20为SDA
-
-### 板载元器件
-
-**【正面功能介绍：】**
-
-![image-20240923165954313](/开源大师兄编程板.assets/image-20240923165954313.png)
-
-- **OLED屏幕**
-
- 128 * 64 分辨率，是常见的输出设备。
-
-- **A/B 按键**
-
-大师兄开发板正面有两个可编程输入按钮，左边是 A 键，右边是 B 键。一般用于触发事件，比如按下 A 键，让蜂鸣器播放音乐或者屏幕显示信息。
-
-- **光距传感器**
-
-可用于检测光照强度以及距前方物体距离。
-
-- **蓝色LED灯**
-
-大师兄默认自带一个可编程蓝色LED灯，占用引脚`P15`，可以通过数字、模拟写入实现编程控制。
-
-
-**【背面功能介绍：】**
-
-![image-20240923170020393](/开源大师兄编程板.assets/image-20240923170020393.png)
-
-- **主控芯片**
-
-在大师兄开发板背面我们可以很明显的看到一块大的元器件，它就是主控芯片：Hi3861V100。它是一款强大的微控制器，在安全性以及多功能接口方面非常出色，并且它带有第三方组件，可以实现开放和直观的开发和调试。
-
-详情参考: <a href="https://www.hisilicon.com/cn/">Hi3861V00官方文档</a>
-
-- **蜂鸣器**
-
-蜂鸣器作为常用的输出设备，在很多设备中都有使用，蜂鸣器是可编程的，您可以通过编程控制蜂鸣器的打开与关闭。
-
-- **温湿度传感器**
-
-AHT20温湿度传感器，可用于检测温度和湿度。由于部分板载器件工作期间发热较多，不适宜在高精度要求下检测环境温度。
-
-- **陀螺仪**
-
-XYZ3轴陀螺仪，用于检测偏转角度。
-
-- **语音识别模块**
-
-已固化了部分常用词条，可通过“你好，小宁”唤醒，适宜用于语音控制场景。
-
-- **复位按键**
-
-在大师兄开发板背面放置有一颗复位按键，它的功能是可以让编写的程序重新运行。
-
-- **Type-C接口**
-
-大师兄开发板的接口使用的是Type-C接口，它可以作为供电接口，也是下载程序的接口。
-
-
-
-## 3 驱动安装
-
-在连接主控的情况下，如果在编程软件相应的连接窗口无法识别到新增设备，请安装驱动 ↓↓↓
-
-驱动软件: CH341SER  <a href="https://cfunassets.oss-cn-hangzhou.aliyuncs.com/%E8%BD%AF%E4%BB%B6/%E9%A9%B1%E5%8A%A8/arduino%E7%B3%BB%E5%88%97/CH341SER.EXE">点击下载</a>
-
-*（注意：安装失败可在卸载后尝试重新安装；或尝试安装 <a href="https://cfunassets.oss-cn-hangzhou.aliyuncs.com/%E8%BD%AF%E4%BB%B6/%E9%A9%B1%E5%8A%A8/arduino%E7%B3%BB%E5%88%97/%E5%A4%87%E7%94%A8%E4%B8%B2%E5%8F%A3%E9%A9%B1%E5%8A%A8.zip">备用串口驱动</a>）*
-
-![image-20240923173311459](/开源大师兄编程板.assets/image-20240923173311459.png)
-
-
-
-## 4 固件升级
-
-固件升级用于优化硬件设备功能
-
-详细操作参照 <a href="https://dict.cfunworld.com/download/firmware/%E5%BC%80%E6%BA%90%E5%A4%A7%E5%B8%88%E5%85%84%E5%9B%BA%E4%BB%B6.html" target="_blank">开源大师兄固件升级文档</a>
-
-
-
-## 5 大师兄拓展板-A
-
-<img src="/开源大师兄编程板.assets/Untitled-1-02.png" alt="Untitled-1-02" style="zoom:50%;" />
-
-配合开源大师兄编程板使用，外扩P1/2/5/8/11/12/13/14/15引脚，集成电机、IIC通讯设备、串口通讯设备引脚，方便用户外接设备连线；底座采用积木结构，更利于结构及场景的搭建；扩展DC电源接口，可搭配电池供电。
-
-
-
-
-
-
-
+<a href="https://dict.cfunworld.com/tutorial/cfdsx/getting-started/%E6%9C%8D%E5%8A%A1%E6%94%AF%E6%8C%81.html" style="font-size: 22px;text-decoration: none">🤖&nbsp;  技术交流群</a>
+  
+ 
